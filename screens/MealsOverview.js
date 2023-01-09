@@ -10,13 +10,16 @@ const displayedMeals=MEALS.filter((mealIteam)=>{
 return mealIteam.categoryIds.indexOf(catId) >=0
 })
 
-function renderMealIteam(iteamData){
-    
-return <MealIteam title={iteamData.item.title} 
-imageUrl={iteamData.item.imageUrl} 
-duration={iteamData.item.duration} 
-complexity={iteamData.item.complexity}
-affordability={iteamData.item.affordability} />
+function renderMealIteam(itemData){
+    const item=itemData.item
+    const mealIteamProps={
+        title:item.title,
+        imageUrl:item.imageUrl,
+        duration:item.duration,
+        complexity:item.complexity,
+        affordability:item.affordability,
+    }
+return <MealIteam {...mealIteamProps} />
 }
 return (
         <View style={styles.container}>
@@ -33,5 +36,5 @@ const styles=StyleSheet.create({
         flex:1,
         padding:16,
 
-    }
+    },
 })
