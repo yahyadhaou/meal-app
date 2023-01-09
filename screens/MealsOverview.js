@@ -1,6 +1,6 @@
 import { View, FlatList, StyleSheet} from "react-native"
 import MealIteam from "../components/MealItem"
-
+import { useLayoutEffect } from "react"
 import { MEALS,CATEGORIES} from "../data/dummy-data"
 
 
@@ -10,11 +10,15 @@ function MealsOverview({route,navigation}) {
 const displayedMeals=MEALS.filter((mealIteam)=>{
 return mealIteam.categoryIds.indexOf(catId) >=0
 })
-const categoryTitle=CATEGORIES.find((category)=>category.id=== catId).title
 
-navigation.setOptions({
-    title:categoryTitle,
-});
+useLayoutEffect(()=>{
+    const categoryTitle=CATEGORIES.find((category)=>category.id=== catId).title
+    
+    navigation.setOptions({
+        title:categoryTitle,
+    });
+
+},[catId,navigation])
 
 function renderMealIteam(itemData){
     const item=itemData.item
