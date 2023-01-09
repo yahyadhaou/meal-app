@@ -5,7 +5,7 @@ function MealIteam({ title, imageUrl, affordability, complexity, duration }) {
         <View style={styles.mealIteam}>
             <Pressable 
             android_ripple={{color:'#ccc'}}  
-            style={({pressed})=>[styles.button,pressed ? styles.buttonPressed:null]}>
+            style={({pressed})=>(styles.button,pressed ? styles.buttonPressed:null)}>
                 <View style={styles.innerConatainer}>
                     <Image style={styles.image} source={{ uri: imageUrl }} />
                     <Text style={styles.title}>{title}</Text>
@@ -59,5 +59,8 @@ overflow:'hidden',
     detailsIteam: {
         marginHorizontal: 4,
         fontSize: 13,
-    }
+    },
+    buttonPressed:{
+        opacity:0.5,
+    },
 })
