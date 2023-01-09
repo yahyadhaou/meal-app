@@ -1,14 +1,20 @@
 import { View, FlatList, StyleSheet} from "react-native"
 import MealIteam from "../components/MealItem"
 
-import { MEALS } from "../data/dummy-data"
+import { MEALS,CATEGORIES} from "../data/dummy-data"
 
 
-function MealsOverview({route}) {
+function MealsOverview({route,navigation}) {
    const catId= route.params.categoryId
+
 const displayedMeals=MEALS.filter((mealIteam)=>{
 return mealIteam.categoryIds.indexOf(catId) >=0
 })
+const categoryTitle=CATEGORIES.find((category)=>category.id=== catId).title
+
+navigation.setOptions({
+    title:categoryTitle,
+});
 
 function renderMealIteam(itemData){
     const item=itemData.item
