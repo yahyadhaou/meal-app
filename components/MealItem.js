@@ -1,10 +1,12 @@
-import { Image, Platform, Pressable, StyleSheet, Text, View ,Platform} from "react-native"
+import { Image, Platform, Pressable, StyleSheet, Text, View} from "react-native"
 
 function MealIteam({ title, imageUrl, affordability, complexity, duration }) {
     return (
         <View style={styles.mealIteam}>
-            <Pressable>
-                <View>
+            <Pressable 
+            android_ripple={{color:'#ccc'}}  
+            style={({pressed})=>[styles.button,pressed ? styles.buttonPressed:null]}>
+                <View style={styles.innerConatainer}>
                     <Image style={styles.image} source={{ uri: imageUrl }} />
                     <Text style={styles.title}>{title}</Text>
                 </View>
@@ -39,8 +41,14 @@ const styles = StyleSheet.create({
         elevation: 4,
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 8,
+        shadowRadius: 16,
+        shadowOpacity:0.35,
+        
 
+    },
+    innerConatainer:{
+borderRadius:8,
+overflow:'hidden',
     },
     details: {
         flexDirection: 'row',

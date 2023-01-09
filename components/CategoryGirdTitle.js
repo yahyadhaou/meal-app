@@ -26,6 +26,7 @@ elevation:4,
 shadowColor:'black',
 shadowOffset:{width:0,height:2},
 shadowRadius:8,
+shadowOpacity:0.35,
 backgroundColor:'#F2F2F2',
 overflow: Platform.OS==='android' ? 'hidden':'visible'
 
