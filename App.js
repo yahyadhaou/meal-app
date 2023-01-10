@@ -21,11 +21,9 @@ export default function App() {
         <Stack.Screen 
         name="MealsCategories" 
         component={CategoriesScreens} 
-        // options={({route,navigation})=>{
-        //   const carId=route.params.categoryId;
-        //  return{ title:carId,
-        //     }
-        // }}
+       options={{
+        title:"All categories"
+       }}
         />
         <Stack.Screen name="MealsOverview" component={MealsOverview} />
         <Stack.Screen name="MealDetails" component={MealDetailScreen}  />
