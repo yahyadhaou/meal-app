@@ -23,6 +23,7 @@ useLayoutEffect(()=>{
 function renderMealIteam(itemData){
     const item=itemData.item
     const mealIteamProps={
+        id:item.id,
         title:item.title,
         imageUrl:item.imageUrl,
         duration:item.duration,

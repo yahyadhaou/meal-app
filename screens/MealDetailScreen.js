@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native"
 
-function MealDetailScreen() {
+function MealDetailScreen({route}) {
+    const mealID= route.params.mealID   
     return(
         <View>
             <Text>
-                hello
+                hello({mealID})
             </Text>
         </View>
     )
